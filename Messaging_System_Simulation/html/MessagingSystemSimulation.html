@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>message</title>
+    <link rel="stylesheet" type="text/css" href="../css/MessagingSystemSimulation.css">
+</head>
+<body>
+    <h1>send a message to your friend</h1>
+    <div class="gridallitems">
+      <div id="lastmessage0583235695" class="lastmessage"></div>
+      <div id="lastmessage0548444164" class="lastmessage"></div>
+      <div id="lastmessage0548590344" class="lastmessage"></div>
+       <div class="messageDetail">
+        <p>0583235695</p>
+        <input type="tel" name="phonefriend" placeholder="05********,05********"  id="phone0583235695"><br>
+        <textarea placeholder="write a message to your friend" rows="7" cols="20"  id="content0583235695"></textarea>
+        <br>
+        <button id="btnsend0583235695" onclick="sendMessage(phone0583235695.value,content0583235695.value,'0583235695')">send</button>
+      </div>
+        <div class="imgAndLine"> 
+        <img id="img0583235695" class="imagescus" src="../photo/messagePhoto.png" >
+        <div id="line0583235695" class="linescus"></div>
+     </div>
+
+     <div class="messageDetail">
+        <p>0548444164</p>
+        <input type="tel" placeholder="05********,05********" id="phone0548444164"><br>
+        <textarea placeholder="write a message to your friend" rows="7" cols="20"  id="content0548444164"></textarea>
+        <br>
+        <button id="btnsend0548444164" onclick="sendMessage(phone0548444164.value,content0548444164.value,'0548444164')">send</button>
+      </div>
+      <div class="imgAndLine"> 
+        <img id="img0548444164" class="imagescus" src="../photo/messagePhoto.png" >
+        <div id="line0548444164" class="linescus"></div>
+     </div>
+     
+     <div id="server"></div>
+
+     <div class="messageDetail"> 
+        <p>0548590344</p>
+        <input type="tel" placeholder="05********,05********" id="phone0548590344"><br>
+        <textarea placeholder="write a message to your friend" rows="7" cols="20" id="content0548590344"></textarea>
+        <br>
+        <button id="btnsend0548590344" onclick="sendMessage(phone0548590344.value,content0548590344.value,'0548590344')">send</button>
+     </div>
+      <div class="imgAndLine"> 
+        <img id="img0548590344" class="imagescus" src="../photo/messagePhoto.png" >
+        <div id="line0548590344" class="linescus"></div>
+     </div>
+    </div>
+
+    <script src="../js/cable.js"></script>
+    <script src="../js/packages.js"></script>
+    <script src="../js/client.js"></script>
+    <script src="../js/servers.js"></script>
+    <script src="../js/MessagingSystemSimulation.js"></script>
+</body>
+</html>

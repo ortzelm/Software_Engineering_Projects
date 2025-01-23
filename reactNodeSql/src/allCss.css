@@ -1,0 +1,35 @@
+.highlight {
+  font-weight: bold;
+}
+
+.posts-table {
+  width: 808.800px;
+  border-collapse: collapse;
+}
+.linksOfAlbums {
+  color: blue; /* צבע כחול */
+  font-style: italic; /* טקסט נטוי */
+  text-decoration: none; /* הסרת קו תחתון ברירת מחדל */
+  transition: all 0.2s ease; /* אנימציה לחלקי העיצוב */
+}
+
+.linksOfAlbums:hover {
+  text-decoration: underline; /* קו תחתון כאשר עכבר עובר */
+}
+
+.searchAlbum {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.albumdet {
+  align-items: center;
+  gap: 10px;
+   margin-bottom: 10px;
+}
+.albumNo{
+  margin: 0 10px 0 0;
+   font-weight: bold;
+   text-align: right;
+}
