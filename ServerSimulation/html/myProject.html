@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event production project</title>
+    <link rel="stylesheet" href="../css/projecDesign.css">
+    <!--login-->
+    <template id="login">
+        <div class="login">
+            <form class="form-container">
+                <div class="con">
+                    <header class="head-form"><br>
+                        <h2>Log In</h2>
+                        <p>login here using your username and password</p>
+                    </header>
+                    <div id="field-set">
+                        <input class="form-input" id="userName" type="text" placeholder="name"><br>
+                        <input class="form-input" type="password" placeholder="your code" id="codeManger"
+                            name="codeManger"><br>
+                        <input class="form-input" type="email" id="userEmail" placeholder="email" name="email"><br>
+                    </div>
+                    <div id="btn">
+                        <button id="login_btn" class="login_button" onclick="login()">Log In</button>
+                        <p>Don't have an account with us?</p>
+                        <button id="signin_btn" class="signin_button" onclick="showSignin()">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </template>
+    <!-- signin -->
+    <template id="signin">
+        <div class="signin">
+            <form class="form-container">
+                <div class="con">
+                    <header class="head-form"><br>
+                        <h2>Sign In</h2>
+                        <p>Welcome new producer, pleas insert your details</p>
+                    </header>
+                    <div id="field-set">
+                        <input class="form-input" id="userName" type="text" placeholder="name"><br>
+                        <input class="form-input" type="tel" placeholder="telephone" id="tel" name="tel" /><br>
+                        <input class="form-input" id="mail" type="email" placeholder="mail"><br>
+                        <input class="form-input" type="password" placeholder="Password" id="codeManger"
+                            name="codeManger"><br>
+                    </div>
+                    <div id="btn">
+                        <button id="signin_btn" class="signin_button" onclick="signin()"> sighn In </button>
+                        <p>to the login page</p>
+                        <button id="login_btn" class="login_button" onclick="showLogin()">Log In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </template>
+    <!-- producer system -->
+    <template id="schedule">
+        <div id="schedule" class="schedule-container">
+            <p class="head-form"> Welcome to your schedule</p>
+            <div class="table-container">
+                <table id="iformationinTable">
+                    <tr>
+                        <th>nameOfClient</th>
+                        <th>phoneOfClient</th>
+                        <th>dateOfEvent</th>
+                        <th>kindOfEvent</th>
+                        <th>location</th>
+                        <th>numOfPeople</th>
+                        <th>photographer</th>
+                        <th>Ballons</th>
+                        <th>flowers</th>
+                        <th>Singer</th>
+                        <th>toDelete</th>
+                        <th>toEdit</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="buttons-container">
+                <button id="logOut" onclick="logout()"> log out </button><br>
+                <label>search</label><br>
+                <input class="form-input" type="date" placeholder="datetime" id="datetime" name="date"><br>
+                <button id="search" onclick="search()"> ok </button><br>
+                <button id="refresh" onclick="refresh()"> refresh </button><br>
+                <button id="add" onclick="showAdd()"> add event </button><br>
+            </div>
+        </div>
+    </template>
+    <!-- Add/change event page-->
+    <template id="add">
+        <div>
+            <form>
+                <header class="head-form"><br>
+                    <p id="addP">Add event</p>
+                    <p id="editP">Edit event</p>
+                </header>
+                <div id="field-set">
+                    <input class="form-input" id="nameOfClient" type="text" placeholder="name"><br>
+                    <input class="form-input" type="text" placeholder="telephone" id="tel" name="tel"><br>
+                    <input class="form-input" type="date" placeholder="datetime" id="datetime" name="date"><br>
+                    <input class="form-input" id="kindOfEvent" type="text" placeholder="kindOfEvent"><br>
+                    <input class="form-input" id="location" type="text" placeholder="location"><br>
+                    <input class="form-input" id="numOfPeople" type="number" placeholder="NumOfPeaple"><br>
+                    <label for="photographer">Choose a photographer:</label><br>
+                    <select name="photographer" id="photographer">
+                        <option value="Yosi">Yosi</option>
+                        <option value="Avidan">Avidan</option>
+                        <option value="Uria">Uria</option>
+                        <option value="Noia">Noia</option>
+                    </select>
+                    <label for="Ballons">Choose responsible balloons:</label><br>
+                    <select name="Ballons" id="Ballons">
+                        <option value="Yosi">Yosi</option>
+                        <option value="Avidan">Avidan</option>
+                        <option value="Uria">Uria</option>
+                        <option value="Noia">Noia</option>
+                    </select>
+                    <label for="flowers">Choose a florist :</label><br>
+                    <select name="flowers" id="flowers">
+                        <option value="Yosi">Yosi</option>
+                        <option value="Avidan">Avidan</option>
+                        <option value="Uria">Uria</option>
+                        <option value="Noia">Noia</option>
+                    </select>
+                    <label for="Singer">Choose an orchestra:</label><br>
+                    <select name="Singer" id="Singer">
+                        <option value="Yosi">Yosi</option>
+                        <option value="Avidan">Avidan</option>
+                        <option value="Uria">Uria</option>
+                        <option value="Noia">Noia</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <button id="addEvent" onclick="addEvent()">save</button>
+        <button id="updateBtn">edit</button>
+    </template>
+    <template>
+        <div id="search">
+            <label for="search">Search for an event by date :</label>
+            <input class="form-input" type="datetime" placeholder="datetime" id="datetime" name="date">
+            <button id="search" onclick=""> search event </button>
+        </div>
+    </template>
+</head>
+<body onload="showLogin()"></body>
+<script type="text/javascript" src="../js/navigation.js"></script>
+<script type="text/javascript" src="../js/DB.js"></script>
+<script type="text/javascript" src="../js/fajax.js"></script>
+<script type="text/javascript" src="../js/netWork.js"></script>
+<script type="text/javascript" src="../js/server.js"></script>
+<script type="text/javascript" src="../js/eventsManagement.js"></script>
+</html>
